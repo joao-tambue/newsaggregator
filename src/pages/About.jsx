@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ThemeContext } from "../ThemeContext";
 import { Globe, Newspaper, Network, Box } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -20,12 +18,9 @@ const About = () => {
     }
   };
 
-
-  const { theme } = useContext(ThemeContext);
-
   return (
 
-    <div className={`${theme === "dark" ? "text-white" : "border-b border-black"}`}>
+    <div className="text-black">
       <div className="max-w-4xl mx-auto px-6 py-12 font-mono">
         <div>
         <motion.div
@@ -137,34 +132,34 @@ const About = () => {
           </motion.div>
         </div>
 
-        <div className={`${theme === "dark" ? "text-white" : "border-b border-black"}`}>
-        <div className="h-screen flex items-center justify-center">
-        <div className="relative w-[500px] h-[300px]" onClick={handleNextPaper}>
-        {papers.map((paper, index) => (
-          <motion.div
-            key={paper.id}
-            className="absolute w-full h-full bg-white shadow-lg border border-black p-6 flex flex-col justify-center cursor-pointer"
-            style={{
-              rotate: index * 3 - 6,
-              top: index * 3,
-              left: index * 3,
-              zIndex: index === currentIndex ? 10 : index,
-              opacity: index <= currentIndex ? 1 : 0,
-            }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: index <= currentIndex ? 1 : 0, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Box size={24} color="black" className="w-20 h-20 mr-2" />
-            <h2 className="text-lg font-bold flex items-center">
-              {paper.title}
-            </h2>
-            <p className="text-sm mt-2">{paper.text}</p>
-          </motion.div>
-        ))}
+        <div className="text-black">
+          <div className="h-screen flex items-center justify-center">
+            <div className="relative w-[500px] h-[300px]" onClick={handleNextPaper}>
+              {papers.map((paper, index) => (
+                <motion.div
+                  key={paper.id}
+                  className="absolute w-full h-full bg-white shadow-lg border border-black p-6 flex flex-col justify-center cursor-pointer"
+                  style={{
+                    rotate: index * 3 - 6,
+                    top: index * 3,
+                    left: index * 3,
+                    zIndex: index === currentIndex ? 10 : index,
+                    opacity: index <= currentIndex ? 1 : 0,
+                  }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: index <= currentIndex ? 1 : 0, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Box size={24} color="black" className="w-20 h-20 mr-2" />
+                  <h2 className="text-lg font-bold flex items-center">
+                    {paper.title}
+                  </h2>
+                  <p className="text-sm mt-2">{paper.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
       </div>
     </div>
   );
