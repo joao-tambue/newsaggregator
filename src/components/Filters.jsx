@@ -7,15 +7,15 @@ Filters.propTypes = {
 };
 
 
-export default function Filters({ onChange }) {
+export default function Filters({ onChange, }) {
     const [showFilters, setShowFilters] = useState(false);
 
     return (
         <>
             <div className="container mx-auto max-w-[1100px] mt-[74px] mb-[62px] flex justify-between items-center">
-                <h1 className="title-mochiy font-extrabold text-xl">Articles</h1>
+                <h1 className="title-mochiy font-extrabold text-xl">Articles </h1>
                 <button className="flex justify-between rounded-md border-2 border-black px-4 py-2" onClick={() => setShowFilters(!showFilters)}>
-                    <img src="public/Frame.svg" alt="" className="mr-2" /> {showFilters ? "Hide Filters" : "Show Filters"}
+                    <img src="/Frame.svg" alt="" className="mr-2" /> {showFilters ? "Hide Filters" : "Show Filters"}
                 </button>
             </div>
 

@@ -34,28 +34,27 @@ export function useArticles() {
 
 
     useEffect(() => {
-        let result = articles;
+  let result = articles;
 
+  if (filters.search) {
+    result = result.filter(a =>
+      a.title?.toLowerCase().includes(filters.search.toLowerCase())
+    );
+  }
 
-        if (filters.search)
-            result = result.filter(a =>
-            a.title.toLowerCase().includes(filters.search.toLowerCase())
-        );
+  if (filters.source) {
+    result = result.filter(a => a.source?.name === filters.source);
+  }
 
+  if (filters.date) {
+    result = result.filter(a =>
+      a.publishedAt?.startsWith(filters.date)
+    );
+  }
 
-        if (filters.source)
-            result = result.filter(a => a.source.name === filters.source);
+  setFilteredArticles(result);
+}, [filters, articles]);
 
-        if (filters.description)
-            result = result.filter(a => a.description && a.description.toLowerCase().includes(filters.description.toLowerCase()));
-
-
-        if (filters.date)
-            result = result.filter(a => a.publishedAt.startsWith(filters.date));
-
-
-        setFilteredArticles(result);
-    }, [filters, articles]);
 
 
     return { filteredArticles, setFilters, loading };
