@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getNews } from "../api/news.service";
 
-export function useNews(page, perPage) {
+export function useNews(page, perPage, filters) {
     const [articles, setArticles] = useState([]);
     const [totalResults, setTotalResults] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -18,6 +18,7 @@ export function useNews(page, perPage) {
                 const data = await getNews({
                     page,
                     limit: perPage,
+                    ...filters,
                 });
 
                 if (isMounted) {
@@ -40,7 +41,7 @@ export function useNews(page, perPage) {
         return () => {
             isMounted = false;
         };
-    }, [page, perPage]);
+    }, [page, perPage, filters]);
 
     return {
         articles,

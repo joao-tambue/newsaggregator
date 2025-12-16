@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className={`border-b border-black`}>
+      <header className={`border-b border-black px-4`}>
         <div className="container mx-auto max-w-full w-[1100px] flex items-center justify-between py-4 text-[16px]">
           <div className="flex items-center gap-4">
             <img src="/Logo (1).svg" alt="Logo" className="h-8 w-auto" />
