@@ -5,28 +5,36 @@ import ArticleCard from "../components/ArticleCard";
 import SkeletonArticle from "../components/skeleton/SkeletonArticle";
 import Pagination from "../components/Pagination";
 import { useNews } from "../hooks/useNews";
+import Filters from "../components/Filters";
 
 
 export default function Home() {
-const [page, setPage] = useState(1);
-const perPage = 6;
+  const [page, setPage] = useState(1);
+  const perPage = 6;
 
-const {
-  articles: current,
-  loading,
-} = useNews(page, perPage);
+  const [filters, setFilters] = useState({
+    search: "",
+    category: "",
+    source: "",
+    date: "",
+  });
 
-// const start = (page - 1) * perPage;
-// const current = filteredArticles.slice(start, start + perPage);
+  function handleFiltersChange(changed) {
+    setPage(1); // reset pagination quando filtra
+    setFilters(prev => ({ ...prev, ...changed }));
+  }
+
+  const {
+    articles: current,
+    loading,
+  } = useNews(page, perPage, filters);
 
 
 return (
     <div className="text-black">
 
-      {/* <Filters onChange={
-        // data => setFilters(prev => ({ ...prev, ...data }))
-      } 
-      /> */}
+      <Filters onChange={handleFiltersChange}
+      />
 
 
       <motion.div className="mx-auto max-w-full w-[1100px] grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">

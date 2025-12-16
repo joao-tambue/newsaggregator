@@ -26,7 +26,7 @@ export function useNews(page, perPage) {
                 }
             } catch (err) {
                 if (isMounted) {
-                    setError("Failed to fetch news articles.");
+                    setError(err);
                 }
             } finally {
                 if (isMounted) {
