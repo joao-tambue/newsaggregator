@@ -9,7 +9,7 @@ const SignUpModal = ({ closeModal, showPassword, setShowPassword }) => {
         <button onClick={closeModal}>X</button>
       </div>
 
-      <p className="text-gray-400 mb-4">Malesuada egestas nunc vestibulum</p>
+      <p className="text-gray-400 mb-4">Create a new account</p>
 
       <form className="mt-10">
         <label className="font-semibold">Your Name</label>

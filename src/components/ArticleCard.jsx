@@ -1,4 +1,5 @@
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ArrowUpRight } from 'lucide-react';
 import PropTypes from 'prop-types';
 
 ArticleCard.propTypes = {
@@ -7,13 +8,15 @@ ArticleCard.propTypes = {
 
 
 export default function ArticleCard({ article }) {
-// const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     return (
-        <div>
+        <div className='relative cursor-pointer'
+            onClick={() => navigate("/details", { state: { article } })}
+        >
             <img
-                src={article.urlToImage || "/img-not-found.jpeg"}
+                src={article.urlToImage || "/img-not.jpeg"}
                 className="border-2 border-black h-[315px] w-full object-cover"
             />
 
@@ -34,6 +37,9 @@ export default function ArticleCard({ article }) {
                         more →
                     </button> */}
                 </div>
+            </div>
+            <div className="absolute top-0 right-0 bg-white p-1.5 rounded-[2px] border mt-1 mr-1 border-black hover:scale-110 transition-transform cursor-pointer" onClick={() => window.open(article.url, '_blank')}>
+                <ArrowUpRight className="text-black" size={14} />
             </div>
         </div>
     );

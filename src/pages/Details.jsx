@@ -1,10 +1,7 @@
-import { useContext } from "react";
-import { ThemeContext } from "../ThemeContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 
 const About = () => {
-  const { theme } = useContext(ThemeContext);
   const location = useLocation();
   const navigate = useNavigate();
   const article = location.state?.article;
@@ -14,7 +11,7 @@ const About = () => {
   }
 
   return (
-    <div className={`p-4 ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"}`}>
+    <div className={`p-4 text-back`}>
       <div className="max-w-5xl mx-auto p-6">
       <button
         onClick={() => navigate(-1)}
@@ -26,8 +23,8 @@ const About = () => {
       <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
 
       <div className="flex justify-between">
-      <p className="text-black text-sm mt-2">
-        <strong>Fonte:</strong> {article.source.name} | <strong>Data:</strong>{" "}
+      <p className="text-black text-sm mt-2 mb-6">
+        <strong>By: </strong> {article.source.name} | <strong>Data:</strong>{" "}
         {new Date(article.publishedAt).toLocaleDateString()}
       </p>
 
@@ -57,9 +54,8 @@ const About = () => {
         </div>
       )}
 
-      <hr  className="mt-8 border border-black"/>
       <div className="flex justify-between items-center gap-2 mt-8">
-        <h2 className="font-bold ">Thanks For Read</h2>
+        <h2 className="font-bold ">Thanks For Read !!!</h2>
       </div>
     </div>
     

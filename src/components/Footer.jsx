@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className={`p-4 text-white`}>
             <footer className=" text-black py-8 border-t border-black text-center">
-                <h2 className="text-2xl font-bold mb-4">Newsletter</h2>
+                <h2 className="title-mochiy text-[18px] font-bold mb-4">Newsletter</h2>
 
                 {/* <div className="relative w-full">
                     <input
