@@ -13,7 +13,7 @@ export default function ArticleCard({ article }) {
     return (
         <div>
             <img
-                src={article.image || "/img-not-found.jpeg"}
+                src={article.urlToImage || "/img-not-found.jpeg"}
                 className="border-2 border-black h-[315px] w-full object-cover"
             />
 
