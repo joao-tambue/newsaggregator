@@ -36,17 +36,22 @@ export default function Filters({ onChange, }) {
                             onChange={e => onChange({ category: e.target.value })}
                         >
                             <option value="">Categories</option>
-                            <option value="">Tecnology</option>
-                            <option value="">Education</option>
-                            <option value="">Health</option>
-                            <option value="">Business</option>
+                            <option value="technology">Tecnology</option>
+                            <option value="education">Education</option>
+                            <option value="health">Health</option>
+                            <option value="business">Business</option>
                         </select>
 
-                        <input
-                            placeholder="Source"
+                        <select
                             className="border-2 border-black rounded-md px-4 py-4"
                             onChange={e => onChange({ source: e.target.value })}
-                        />
+                        >
+                            <option value="">Sources</option>
+                            <option value="techcrunch">TechCrunch</option>
+                            <option value="wired">Wired</option>
+                            <option value="the-verge">The Verge</option>
+                            <option value="business-insider">Business Insider</option>
+                        </select>
 
                         <input
                             type="date"
