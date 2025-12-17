@@ -11,8 +11,8 @@ const About = () => {
   }
 
   return (
-    <div className={`p-4 text-back`}>
-      <div className="max-w-5xl mx-auto p-6">
+    <div className={`p-2 text-back`}>
+      <div className="max-w-5xl mx-auto">
       <button
         onClick={() => navigate(-1)}
         className="flex items-center text-blue-600 mb-4"
@@ -37,7 +37,7 @@ const About = () => {
       
       {article.urlToImage && (
         <img
-          src={article.urlToImage}
+          src={article.urlToImage || "/img-not.jpeg"}
           alt="Imagem da notícia"
           className="w-full max-h-[500px] object-cover border border-black shadow-lg"
         />
