@@ -14,7 +14,6 @@ body {
 .title-mochiy {
   font-family: var(--font-title);
   font-weight: 400;
-  font-size: 40px;
   line-height: 100%;
   letter-spacing: 0%;
 }

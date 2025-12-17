@@ -9,8 +9,8 @@ const SignInModal = ({ closeModal, showPassword, setShowPassword }) => {
         <button onClick={closeModal}>X</button>
       </div>
 
-      <p className="text-gray-400 mb-4">Malesuada egestas nunc vestibulum</p>
-
+      <p className="text-gray-400 mb-4">Wellcome back ! Sign-In in your account</p>
+  
       <form className="mt-10">
         <label className="font-semibold">Your email</label>
         <input
