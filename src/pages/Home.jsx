@@ -37,7 +37,7 @@ return (
       />
 
 
-      <motion.div className="mx-auto max-w-full w-[1100px] grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      <motion.div className="bg-gray-100 mx-auto max-w-full w-[1100px] grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         {loading
         ? Array.from({ length: perPage }).map((_, i) => (
             <SkeletonArticle key={i} />

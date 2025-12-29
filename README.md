@@ -1,26 +1,59 @@
-# Agregador de noticias
+# News Aggregator
 
-É um artigo que passa informações em tempo real, as noticias são atualizados depois de 24hrs.
+O projeto **News Aggregator** é uma aplicação web que agrega notícias de várias fontes via API, permitindo filtrar, paginar e visualizar artigos em uma interface responsiva construída com React.js, TailwindCSS e Axios.
 
-O link não esta disponivel, mas podes fazer o clone do projeto e testa-la.
+---
 
-Foi um desafio que eu lancei para mim mesmo para melhorar a minha habilidade como dev Frontend.
+<img src="./public/image.png" />
 
-Tecnologias:
+---
 
-## ReactJs 
+## 🛠️ Setup
 
-## Axios
+<div align="center">
 
-## Framer Motion
+| Technology        | Descrição                                                                                 | Icon                                                                                       |
+| ----------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **React.Js**       | Biblioteca JavaScript para construir interfaces de usuário reativas e componetizadas; usada aqui para estruturar as páginas e componentes do agregador de notícias. | ![React.js](https://img.shields.io/badge/-React.js-05122A?style=flat&logo=react)        |
+| **TypeScript**    | Superset tipado do JavaScript que melhora a produtividade e manutenção de código.        | ![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript) |
+| **TailwindCSS**   | Framework utilitário de CSS para criação rápida de interfaces modernas e responsivas.    | ![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-05122A?style=flat&logo=tailwindcss) |
+| **Axios**         | Cliente HTTP baseado em Promises para consumo de APIs com suporte a interceptors.        | ![Axios](https://img.shields.io/badge/-Axios-05122A?style=flat&logo=axios)                |
 
-Funcionalidades:
+</div>
 
-## Dark e Light mode: apliquei alguns conceitos sobre o useContext, useEffect...
 
-## News.org: a API que usei para exibir as notícias em tempo real.
+---
 
-Currently, two official plugins are available:
+### Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/joao-tambue/newsaggregator.git
+   cd newsaggregator
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+## 🔧 Available Scripts
+
+- `npm install` - for install al dependece
+- `npm run dev` - for run the web aplication
+- `npm run build` - for build aplication
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Built with ❤️ by João Tambue.
