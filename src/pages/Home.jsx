@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-// import Filters from "../components/Filters";
 import ArticleCard from "../components/ArticleCard";
 import SkeletonArticle from "../components/skeleton/SkeletonArticle";
-import Pagination from "../components/Pagination";
 import { useNews } from "../hooks/useNews";
 import Filters from "../components/Filters";
+import Pagination from "../components/Pagination";
 
 
 export default function Home() {
@@ -27,6 +26,7 @@ export default function Home() {
   const {
     articles: current,
     loading,
+    totalResults,
   } = useNews(page, perPage, filters);
 
 
@@ -43,15 +43,14 @@ return (
             <SkeletonArticle key={i} />
           ))
         : current.map((a, i) => (
-            <ArticleCard key={i} article={a} />
+            <ArticleCard key={a.url || a.title || i} article={a} />
           ))}
       </motion.div>
 
-
       <Pagination
-      page={page}
-      setPage={setPage}
-      // hasMore={start + perPage < filteredArticles.length}
+        page={page}
+        setPage={setPage}
+        hasMore={page * perPage < (totalResults || 0)}
       />
     </div>
   );
